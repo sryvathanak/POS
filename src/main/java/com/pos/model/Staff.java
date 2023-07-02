@@ -40,9 +40,9 @@ public class Staff {
     )
 	private List<Role> roles;
 	@Column(name="work_in")
-	private LocalDateTime work_in;
+	private String work_in;
 	@Column(name="work_out")
-	private LocalDateTime work_out;
+	private String work_out;
 	@Column(name="phone_number")
 	private String phone_number;
 	@Column(name="address")
@@ -80,16 +80,28 @@ public class Staff {
 	
 	
 	
-	public LocalDateTime getWork_in() {
+	public String getWork_in() {
 		return work_in;
 	}
-	public void setWork_in(LocalDateTime work_in) {
+	public List<Role> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public void setWork_in(String work_in) {
 		this.work_in = work_in;
 	}
-	public LocalDateTime getWork_out() {
+	public String getWork_out() {
 		return work_out;
 	}
-	public void setWork_out(LocalDateTime work_out) {
+	public void setWork_out(String work_out) {
 		this.work_out = work_out;
 	}
 	public String getPhone_number() {

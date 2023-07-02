@@ -54,6 +54,22 @@ public class Role {
 		this.title = title;
 		this.title_kh = title_kh;
 	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
+	public Role() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	  
 	  
 	 

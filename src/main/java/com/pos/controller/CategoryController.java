@@ -24,16 +24,8 @@ public class CategoryController {
 	@Autowired
 	private CategoryServiceImp categoryServiceImp;
 	
-//	@GetMapping("/categorys")
-//	  public String categorys(Model model) {
-//		model.addAttribute("categorys", categoryServiceImp.getAllCategorys());
-//	    return "categorys";
-//	  }
-	
 	@GetMapping("/categorys")
-	  public String searchcategorys(Model model,@Param("keyword") String keyword,
-			  @Param("keyword_code") String keyword_code,@Param("keyword_title") String keyword_title,
-			  @Param("keyword_status") String keyword_status) {
+	  public String searchcategorys(Model model,@Param("keyword") String keyword) {
 		List<Category> listCategory = categoryServiceImp.listAll(keyword);
 			model.addAttribute("categorys", listCategory);
 			model.addAttribute("keyword", keyword);

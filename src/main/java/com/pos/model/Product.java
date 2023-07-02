@@ -5,12 +5,14 @@ import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -36,9 +38,18 @@ public class Product {
 	  private Double quantity;
 	  @Column(name = "description")
 	  private String description;
-	  @ManyToOne
-	  @JoinColumn(name = "category_id")
-	  private Category category;
+	  @Column(name = "product_image")
+	  private String product_image;
+	  
+	  public String getProduct_image() {
+		return product_image;
+	}
+	public void setProduct_image(String product_image) {
+		this.product_image = product_image;
+	}
+	@ManyToOne(fetch = FetchType.LAZY)
+	    @JoinColumn(name = "category_id",referencedColumnName = "category_id")
+	    private Category category;
 	public Long getId() {
 		return id;
 	}
@@ -105,6 +116,9 @@ public class Product {
 		this.quantity = quantity;
 		this.description = description;
 		this.category = category;
+	}
+	public Product() {
+		// TODO Auto-generated constructor stub
 	}
 	
 	
